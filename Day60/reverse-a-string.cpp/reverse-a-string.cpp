@@ -1,14 +1,53 @@
-<h2><a href="https://practice.geeksforgeeks.org/problems/reverse-a-string/1">Reverse a String</a></h2><h3>Difficulty Level : Basic</h3><hr><div class="problems_problem_content__Xm_eO"><p><span style="font-size: 18px;">You are given a string s. You need to reverse the string.</span></p>
-<p><span style="font-size: 18px;"><strong>Example 1:</strong></span></p>
-<pre><span style="font-size: 18px;"><strong>Input:
-</strong>s = Geeks
-<strong>Output: </strong>skeeG</span>
-</pre>
-<p><span style="font-size: 18px;"><strong>Example 2:</strong></span></p>
-<pre><span style="font-size: 18px;"><strong>Input:
-</strong>s = for
-<strong>Output: </strong>rof</span></pre>
-<p><span style="font-size: 18px;"><strong>Your Task:</strong></span></p>
-<p><span style="font-size: 18px;">You only need to complete the function <strong>reverseWord()</strong> that takes s as parameter and returns the reversed string.</span></p>
-<p><span style="font-size: 18px;"><strong>Expected Time Complexity:&nbsp;</strong>O(|S|).<br><strong>Expected Auxiliary Space:&nbsp;</strong>O(1).</span></p>
-<p><span style="font-size: 18px;"><strong>Constraints:</strong><br>1 &lt;= |s|&nbsp;&lt;= 10000</span></p></div><br><p><span style=font-size:18px><strong>Topic Tags : </strong><br><code>Strings</code>&nbsp;<code>Data Structures</code>&nbsp;
+//{ Driver Code Starts
+//Initial Template for C++
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
+
+// } Driver Code Ends
+//User function Template for C++
+class Solution
+{
+    public:
+    string reverseWord(string str)
+    {
+        // Your code goes here
+         int n=str.length(); 
+        int i=0; int j=n-1; 
+        while(i<j) 
+        { 
+            int temp; 
+            temp=str[i];
+            str[i]=str[j];
+            str[j]=temp; 
+            i++;
+            j--;
+        } 
+        return str;
+    }
+};
+
+
+
+//{ Driver Code Starts.
+
+int main() {
+	
+	int t;
+	cin>>t;
+	while(t--)
+	{
+    	string s;
+    	cin >> s;
+    	Solution ob;
+    	cout << ob.reverseWord(s) << endl;
+	}
+	return 0;
+	
+}
+
+
+// } Driver Code Ends
